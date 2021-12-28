@@ -1,0 +1,26 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Variables
+        run: |
+          echo ${{ github.repository }}
+          echo ${{ github.repository_owner }}
+          echo ${{ github.base_ref }}
+          echo ${{ github.job }}
+          echo ${{ github.ref }}
+          echo ${{ github.ref_name }}
+          echo ${{ github.ref_type }}
+          echo ${{ github.run_id }}
+          echo ${{ github.run_number }}
+          echo ${{ github.run_attempt }}
+          echo ${{ github.sha }}
+          echo ${{ env }}
+          echo ${{ job }}
